@@ -21,10 +21,10 @@ import static java.net.http.HttpResponse.asString;
 public class HttpClientEx {
 
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
-        new HttpClientEx().useJavaClient();
+        useApacheHttpClient();
     }
 
-    public void useApacheHttpClient() throws IOException {
+    public static void useApacheHttpClient() throws IOException {
         HttpGet get = new HttpGet("http://google.com");
         get.addHeader("User-Agent", "Mozilla");
 
@@ -38,7 +38,7 @@ public class HttpClientEx {
                 .collect(Collectors.joining()));
     }
 
-    public void useJavaClient() throws URISyntaxException, IOException, InterruptedException {
+    public static void useJavaClient() throws URISyntaxException, IOException, InterruptedException {
         java.net.http.HttpResponse response =
                 HttpClient.getDefault()
                 .request(new URI("http://google.com"))

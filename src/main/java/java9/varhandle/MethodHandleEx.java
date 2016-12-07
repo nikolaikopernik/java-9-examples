@@ -33,7 +33,7 @@ public class MethodHandleEx {
         smh = mm;
     }
 
-    ;
+
 
     @Setup
     public void init() throws NoSuchMethodException, IllegalAccessException {
@@ -73,6 +73,7 @@ public class MethodHandleEx {
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
                 .include(MethodHandleEx.class.getSimpleName()).threads(1)
+                //.warmupTime(TimeValue.microseconds(1)).measurementTime(TimeValue.microseconds(1))
                 .forks(1).shouldFailOnError(true).shouldDoGC(true).warmupIterations(5).measurementIterations(5)
                 .jvmArgs("-server").build();
         new Runner(options).run();

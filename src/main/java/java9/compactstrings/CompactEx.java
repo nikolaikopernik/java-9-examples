@@ -1,9 +1,10 @@
-package java9.cmpactstrings;
+package java9.compactstrings;
 
 import org.openjdk.jol.info.GraphLayout;
 
 /**
- * Created by kopernik on 20/11/16.
+ * To disable CompactStrings
+ * feature use -XX:-CompactStrings
  */
 public class CompactEx {
 
